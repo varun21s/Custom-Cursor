@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1
+        {
+            text-transform: capitalize;
+
+            color: white;
+            text-align:center ;
+            padding:40px;
+           
+            
+            
+        }
+        #d
+        {
+            background-color: black;
+            width: 100%;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+       #d:hover~#circle
+        {
+           border:8px double tomato;
+           width: 100px;
+           height: 100px;
+           animation: rotatee 8s linear infinite;
+        }
+      
+        #circle
+        {
+            width:20px;
+            height: 20px;
+            border:2px solid black;
+            border-radius: 50%;
+            position: absolute;
+            top: 500px;
+            left: 50px;
+           
+            
+        }
+
+        /* #dott
+        {
+            position: relative;
+            width: 10px;
+            height: 10px;
+            background-color:white;
+            border-radius: 50%;
+            transform: translate(-50%,-50%);
+            left: 50%;
+            top: 50%;
+            
+
+        } */
+      @keyframes rotatee
+       {
+          0%
+          {
+            transform:rotate(0deg);
+          }
+          100%
+          {
+            transform:rotate(360deg);
+          }
+      }
+    </style>
+</head>
+<body>
+    <div id="d">
+        <h1>this is a cool cursor hover effect</h1>
+    </div>
+    <div id="circle" >
+        <!-- <div id="dott"></div> -->
+    </div>
+</body>
+<script>
+    window.onload=()=>{
+        var x,y,d;
+        d=document.getElementById("circle");
+    document.addEventListener("mousemove" ,(e)=>{
+        x=e.clientX;
+        y=e.clientY;
+        console.log(x);
+        d.style.left=x+"px";
+        d.style.top=y+"px";
+    });
+    };
+   
+</script>
+</html>
